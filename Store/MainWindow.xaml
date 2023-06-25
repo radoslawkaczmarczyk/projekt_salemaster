@@ -1,0 +1,20 @@
+﻿<Window x:Class="Store.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Store"
+        mc:Ignorable="d"
+        Title="GameShop" Height="768" Width="1024">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="53*"/>
+            <ColumnDefinition Width="971*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="Produkty"  HorizontalAlignment="Left"  VerticalAlignment="Top" Width="204" Height="64" Background="#66D78342" Foreground="black" FontSize="20" FontWeight="Bold" Margin="149,604,0,0" BorderThickness="1" Click="Click_Products" Grid.Column="1"/>
+        <Button Content="Zamówienia" VerticalAlignment="Top" Height="64" Background="#66D78342" Foreground="black" FontSize="20" FontWeight="Bold"  BorderThickness="1" Click="Click_Orders" Grid.Column="1" Margin="577,604,190,0"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/images/logo.jpg" Stretch="Fill"/>
+        </Grid.Background>
+    </Grid>
+</Window>

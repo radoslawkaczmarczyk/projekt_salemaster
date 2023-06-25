@@ -1,0 +1,24 @@
+﻿<Window x:Class="Store.Windows.Orders"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Store.Windows"
+        mc:Ignorable="d"
+        Title="Orders" Height="768" Width="1024" Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid x:Name="Customer_Grid"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="60,118,701,327" Height="292" Width="255" Background="#33000000" IsReadOnly="True" SelectionChanged="Customer_Grid_SelectionChanged"/>
+        <Label Content="Klienci" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="149,90,797,624" Height="28" Width="70" Foreground="Orange" FontSize="15"/>
+        <DataGrid x:Name="Category_Grid"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="692,118,68,327" Height="292" Width="256" Background="#33000000" IsReadOnly="True" SelectionChanged="Category_Grid_SelectionChanged"/>
+        <Label Content="Kategorie" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="788,90,158,624" Height="28" Width="77" Foreground="Orange" FontSize="15"/>
+        <DataGrid x:Name="Product_Grid"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="380,118,380,327" Height="292" Width="256" Background="#33000000" IsReadOnly="True"/>
+        <Label Content="Produkty" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="482,90,464,624" Height="28" Width="70" Foreground="Orange" FontSize="15"/>
+        <DataGrid x:Name="Purchase_Grid"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="60,474,380,28" Height="235" Width="576" Background="#33000000" IsReadOnly="True"/>
+        <Label Content="Zakupy" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="313,446,633,268" Height="28" Width="70" Foreground="Orange" FontSize="15"/>
+        <Button Content="Dodaj" HorizontalAlignment="Center" VerticalAlignment="Center" Width="112" Height="46" Background="#99D78342" Foreground="black" FontSize="20" Margin="692,474,212,217" Click="Click_Add_product"/>
+        <Button Content="Usuń" HorizontalAlignment="Center" VerticalAlignment="Center" Width="112" Height="46" Background="#99D78342" Foreground="black" FontSize="20" Margin="692,542,212,149" Click="Click_Delete_product"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/images/orders.png" Stretch="Fill"/>
+        </Grid.Background>
+    </Grid>
+</Window>

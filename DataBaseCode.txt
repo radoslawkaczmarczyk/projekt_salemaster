@@ -1,0 +1,53 @@
+CREATE TABLE [dbo].[Category] (
+    [Category_Id] INT            IDENTITY (1, 1) NOT NULL,
+    [name]        NVARCHAR (MAX) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Category_Id] ASC)
+);
+
+CREATE TABLE [dbo].[Product] (
+    [Product_Id]  INT            IDENTITY (1, 1) NOT NULL,
+    [name]        NVARCHAR (MAX) NOT NULL,
+    [Category_Id] INT            NOT NULL,
+    [price]       FLOAT (53)     NOT NULL,
+    PRIMARY KEY CLUSTERED ([Product_Id] ASC),
+    CONSTRAINT [FK_Product_Category] FOREIGN KEY ([Category_Id]) REFERENCES [dbo].[Category] ([Category_Id])
+);
+
+CREATE TABLE [dbo].[Customer] (
+    [Customer_Id] INT            IDENTITY (1, 1) NOT NULL,
+    [firstName]        NVARCHAR (MAX) NOT NULL,
+    [surName]    NVARCHAR (MAX) NOT NULL,
+    PRIMARY KEY CLUSTERED ([Customer_Id] ASC)
+);
+
+CREATE TABLE [dbo].[Purchase] (
+    [Purchase_Id] INT      IDENTITY (1, 1) NOT NULL,
+    [Product_Id]  INT      NOT NULL,
+    [Customer_Id] INT      NOT NULL,
+    [data]        DATETIME NOT NULL,
+    PRIMARY KEY CLUSTERED ([Purchase_Id] ASC),
+    CONSTRAINT [FK_Purchase_Customer] FOREIGN KEY ([Customer_Id]) REFERENCES [dbo].[Customer] ([Customer_Id]),
+    CONSTRAINT [FK_Purchase_Product] FOREIGN KEY ([Product_Id]) REFERENCES [dbo].[Product] ([Product_Id])
+);
+
+GO
+
+INSERT INTO Category
+VALUES
+	('sportowe'),
+	('przygodowe'),
+	('fabularne'),
+	('logiczne'),
+	('MMORPG'),
+	('strategiczne');
+
+INSERT INTO Customer
+VALUES
+	('Paweł', 'Stek'),
+	('Sylwester', 'Korba'),
+	('Marcin', 'Arbuz'),
+	('Agnieszka', 'Burak'),
+	('Jakub', 'Szpinak'),
+	('Aleksandra', 'Sałata'),
+	('Maria', 'Ćwikła'),
+	('Katarzyna', 'Ryba');

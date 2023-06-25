@@ -1,0 +1,25 @@
+﻿<Window x:Class="Store.Windows.Products"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Store.Windows"
+        mc:Ignorable="d"
+        Title="Products" Height="768" Width="1024" Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid x:Name="Category_Grid"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="22,178,424,23" Height="218" Width="346" Background="#33000000" IsReadOnly="True" SelectionChanged="Category_Grid_SelectionChanged"/>
+        <DataGrid x:Name="Product_Grid"  HorizontalAlignment="Center" VerticalAlignment="Center" Margin="417,178,29,23" Height="218" Width="346" Background="#33000000" IsReadOnly="True" SelectionChanged="Product_Grid_SelectionChanged"/>
+        <Button Content="Dodaj produkt" HorizontalAlignment="Center" VerticalAlignment="Center" Width="112" Height="46" Background="#99D78342" Foreground="black" FontSize="15" Margin="529,226,375,465" Click="Click_Add_product"/>
+        <TextBox x:Name="Product_Name" HorizontalAlignment="Center" VerticalAlignment="Center" Height="24" Margin="360,198,536,515" Width="120" Background="#99D78342" Foreground="black"/>
+        <TextBox x:Name="Product_Price" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="360,250,536,465" Height="22" Width="120" Background="#99D78342" Foreground="black"/>
+        <Label Content="Nazwa" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="309,202,0,0" Height="26" Width="55" Foreground="Orange" FontSize="15"/>
+        <Label Content="Cena" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="319,253,0,0" Height="27" Width="45" Foreground="Orange" FontSize="15"/>
+        <Button Content="Usuń produkt" HorizontalAlignment="Center" VerticalAlignment="Center" Width="112" Height="46" Background="#99D78342" Foreground="black" FontSize="15" Margin="646,226,258,465" Click="Click_Delete_product"/>
+        <Button Content="Zaktualizuj" HorizontalAlignment="Center" VerticalAlignment="Center" Width="112" Height="46" Background="#99D78342" Foreground="black" FontSize="15" Margin="763,226,141,465" Click="Click_Update_product"/>
+        <Label Content="Kategorie" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="274,309,672,405" Height="28" Width="75" Foreground="Orange" FontSize="15"/>
+        <Label Content="Produkty" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="670,309,276,405" Height="28" Width="75" Foreground="Orange" FontSize="15"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="/images/products.png" Stretch="Fill"/>
+        </Grid.Background>
+    </Grid>
+</Window>
